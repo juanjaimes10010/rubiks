@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rubiks cube</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../../p5/p5.min.js"></script>
+    <script>
+      function setup() {
+        createCanvas(innerWidth, innerHeight, WEBGL);
+      }
+      let len = 100;
+      function draw() {
+        orbitControl();
+        background(40);
+
+        for (let x = -1; x <= 1; x++)
+          for (let y = -1; y <= 1; y++)
+            for (let z = -1; z <= 1; z++) {
+              push();
+              translate(x * len, y * len, z * len);
+              box(len);
+              pop();
+            }
+      }
+    </script>
+  </body>
+</html>
